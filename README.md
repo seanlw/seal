@@ -5,7 +5,7 @@ Seal is a assistant tool using Kubeseal (Sealed Secrets) to encrypt Kubernetes S
 ## Usage
 
 ```
-docker run -it seanlw/seal my-secret --namespace default --literal foo=bar --cert public-cert.pem
+docker run seanlw/seal my-secret --namespace default --literal foo=bar --cert public-cert.pem
 ```
 
 Options:
@@ -23,7 +23,7 @@ Options:
 You can load public certificates to encrypt your secrets:
 
 ```
-docker run -it -v /path/to/your/certs:/certs seanlw/seal my-secret --cert your-public-cert.pem 
+docker run -v /path/to/your/certs:/certs seanlw/seal my-secret --cert your-public-cert.pem 
 ```
 
 ### .env and files
@@ -31,5 +31,5 @@ docker run -it -v /path/to/your/certs:/certs seanlw/seal my-secret --cert your-p
 You can load `.env` or other files to add to your secrets
 
 ```
-docker run -it -v /path/to/your/files:/secrets seanlw/seal my-secret --env your-secrets.env
+docker run -v /path/to/your/files:/secrets seanlw/seal my-secret --env your-secrets.env
 ```
